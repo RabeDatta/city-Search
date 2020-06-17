@@ -1,0 +1,24 @@
+.App {
+  text-align: left;
+  background-color: rgb(129, 168, 129);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: rgb(34, 58, 90);
+}
+
+#display {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  text-align: center;
+}
+
+#zip{
+    border: 2px solid green;
+    border-radius: 4px;
+}
