@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from "axios";
 
-class CITYSEARCH extends React.Component {
+class CitySearch extends React.Component {
     constructor(props){
         super(props);
         this.state ={
@@ -22,7 +22,7 @@ class CITYSEARCH extends React.Component {
             const data = response.data;
             this.setState({newCity: data});
         })
-        .catch((err) => console.log(err));
+        //.catch((err) => console.log(err));
     }
 
     render() {
@@ -43,4 +43,4 @@ class CITYSEARCH extends React.Component {
     };
 };
 
-export default CITYSEARCH;
+export default CitySearch;
