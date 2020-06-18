@@ -29,7 +29,7 @@ class CitySearch extends React.Component {
         return(
         <div id="display">
             <div className = "search">
-                <label htmlFor="zip">Please Enter any city name: </label> <br/>
+                <label htmlFor="zip">Please enter any city name: </label> <br/>
                 <input placeholder="NEW YORK" id="zip" type="text" value={this.state.city} onChange = {this.changeCityName}/>
             </div>
              <div className = "zip">
