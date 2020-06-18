@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from "axios";
+
 
 class CitySearch extends React.Component {
     constructor(props){
@@ -17,26 +17,27 @@ class CitySearch extends React.Component {
         });
 
         const url = `http://ctp-zip-api.herokuapp.com/city/`;
-        axios.get(url + e.target.value.toUpperCase())
-        .then((response) => {
-            const data = response.data;
-            this.setState({newCity: data});
-        })
-        //.catch((err) => console.log(err));
+
+        fetch(url + e.target.value.toUpperCase())
+        .then(response => response.json())
+        .then(data => this.setState({ newCity: data }))
+        .catch((error) => {console.error('Error:', error)});
+
     }
 
     render() {
         return(
         <div id="display">
             <div className = "search">
-                <label for="zip">Please Enter any city name: </label> <br/>
+                <label htmlFor="zip">Please Enter any city name: </label> <br/>
                 <input placeholder="NEW YORK" id="zip" type="text" value={this.state.city} onChange = {this.changeCityName}/>
             </div>
-            <div className = "zip">
-                { this.state.newCity.map(zip => {return (
-                    <div className="outputs" key={zip.allNumber}>
-                        {zip}
-                    </div>)})}
+             <div className = "zip">
+                {this.state.newCity.map((zip, index) => (
+                 <div key ={index}> 
+                 {zip} 
+                </div>
+                ))}
             </div>
         </div>
         )
